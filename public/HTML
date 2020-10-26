@@ -1,0 +1,181 @@
+<div id="header">
+  <h1><a href="#00">Chary &middot; Wary</a></h1>
+</div>
+
+
+<div id="footer">
+  <div id="meta">
+    <div class="recent">
+      <h3>Recently Reviewed</h3>
+      <ul>
+        <li><a href="#">300 by Frank Miller</a></li>
+        <li><a href="#">A Big Fat Supernatural Wedding by Sherrilyn Kenyon</a></li>
+        <li><a href="#">Strange Candy by Laurell K. Hamilton</a></li>
+        <li><a href="#">The Time Traveler's Wife by Audrey Niffenegger</a></li>
+        <li><a href="#">Wicked by Gregory Maguire</a></li>
+        <li><a href="#">The Ice Dragon by George R. R. Martin</a></li>
+        <li><a href="#">Path of destruction by Drew Karpshyn</a></li>
+        <li><a href="#">Grave Surprise by Charlaine Harris</a></li>
+        <li><a href="#">Fahrenheit 451 by Ray Bradbury</a></li>
+        <li><a href="#">The Absolute Sandman by Neil Gaiman</a></li>
+      </ul>
+    </div>
+    <div class="upcoming">
+      <h3>To Be Read Still</h3>
+      <ul>
+        <li><a href="#">The Mephisto Club by Tess Gerritsen</a></li>
+        <li><a href="#">The Husband by Dean Koontz</a></li>
+        <li><a href="#">The DaVinci Code by Dan Brown</a></li>
+        <li><a href="#">Angels Fall by Nora Roberts</a></li>
+        <li><a href="#">Twelve Sharp by Janet Evanovich</a></li>
+        <li><a href="#">Imperium by Robert Harris</a></li>
+        <li><a href="#">Under Orders by Dick Francis</a></li>
+        <li><a href="#">The Memory Keeper's Daughter by Kim Ewards</a></li>
+        <li><a href="#">Act of Treason by Vince Flynn</a></li>
+        <li><a href="#">The Collectors by David Baldacci</a></li>
+      </ul>
+    </div>
+    <div class="authors">
+      <h3>Favorite Authors</h3>
+      <ul>
+        <li><a href="#">Suzanne Brockmann</a></li>
+        <li><a href="#">Dan Brown</a></li>
+        <li><a href="#">J. K. Rowling</a></li>
+        <li><a href="#">Tess Gerritsen</a></li>
+        <li><a href="#">Kay Hooper</a></li>
+        <li><a href="#">Tom Clancy</a></li>
+        <li><a href="#">John Grisham</a></li>
+        <li><a href="#">Vince Flynn</a></li>
+        <li><a href="#">Michael Connelly</a></li>
+        <li><a href="#">Dean Koontz</a></li>
+      </ul>
+    </div>
+    <hr />
+  </div>
+  
+</div>
+
+
+
+
+
+
+ <!-- <div class="home">
+    <h1>Movies</h1>
+
+    <div>
+      <h2>New Movie</h2>
+        <p>Title <input type="text" v-model="newMovieTitle"></p>
+        <p>Year: <input type="text" v-model="newMovieYear"></p>
+        <p>Plot: <input type="text" v-model="newMoviePlot"></p>
+        <p>Director: <input type="text" v-model="newMovieDirector"></p>
+        <p>Genre: <input type="text" v-model="newMovieGenre"></p>
+        <button v-on:click="createMovie()">Create</button>
+    </div>
+
+    <div v-for="movie in movies">
+      <h2>Title: {{ movie.title }}</h2> 
+      <p>Year: {{ movie.year }}</p>
+      <p>Plot: {{ movie.plot }}</p>
+      <p>Director: {{ movie.director }}</p>
+      <p v-if="movie.genres.length > 1">Genres: {{ movie.genres[0] }}, {{ movie.genres[1] }}</p>
+      <p v-else>Genre: {{ movie.genres[0] }} </p>
+      <button v-on:click="showMovie(movie)">More Info</button>
+    </div>
+
+    <dialog id="movie-details">
+      <form method="dialog">
+        <h2>Movie Info</h2>
+        <h2>Title: <input type="text" v-model="currentMovie.title"></h2>
+        <p>Year: <input type="text" v-model="currentMovie.year"></p>
+        <p>Plot: <input type="text" v-model="currentMovie.plot"></p>
+        <p>Director: <input type="text" v-model="currentMovie.director"></p>
+        <p>Genre: <input type="text" v-model="currentMovie.genre"></p>
+        <button v-on:click="updateMovie(currentMovie)">Update Movie</button>
+        <button v-on:click="destroyMovie(currentMovie)">Destroy Movie</button>
+        <button>Close</button>
+      </form>
+    </dialog>
+
+  </div> -->
+</template>
+
+<style>
+</style>
+
+// <script>
+// import axios from "axios";
+
+// export default {
+//   data: function() {
+//     return {
+//       movies: [],
+//       newMovieTitle: "",
+//       newMovieYear: "",
+//       newMoviePlot: "",
+//       newMovieEnglish: "",
+//       newMovieDirector: "",
+//       newMovieGenre: "",
+//       currentMovie: {},
+//     };
+//   },
+//   created: function() {
+//     this.indexMovies();
+//   },
+//   methods: {
+//     indexMovies: function () {
+//       axios.get("/api/movies").then((response) => {
+//         console.log(response.data);
+//         this.movies = response.data;
+//       });
+//     },
+//     createMovie: function () {
+//       var params = {
+//         title: this.newMovieTitle,
+//         year: this.newMovieYear,
+//         plot: this.newMoviePlot,
+//         english: this.newMovieEnglish,
+//         director: this.newMovieDirector,
+//         genre: this.newMovieGenre,
+//       };
+
+//       axios.post("/api/movies", params).then((response) => {
+//         console.log("Success", response.data);
+//         this.movies.push(response.data);
+//       }).catch((error) => {
+//         console.log(error.response.data.errors);
+//       });
+//     },
+//     showMovie: function (movie) {
+//       console.log(movie.title);
+//       this.currentMovie = movie;
+//       document.querySelector("#movie-details").showModal();
+//     },
+//     updateMovie: function (movie) {
+//       var params = {
+//         title: movie.title,
+//         year: movie.year,
+//         plot: movie.plot,
+//         director: movie.director,
+//         genre: movie.genre,
+//       };
+
+//       axios
+//         .patch(`/api/movies/${movie.id}`, params)
+//         .then((response) => {
+//           console.log("Success", response.data);
+//         })
+//         .catch((error) => {
+//           console.log(error.response.data.errors);
+//         });
+//     },
+//     destroyMovie: function (movie) {
+//       axios.delete(`/api/movies/${movie.id}`).then((response) => {
+//         console.log("Success", response.data);
+//         var index = this.movies.indexOf(movie);
+//         this.movies.splice(index, 1);
+//       });
+//     },
+//   }
+// };
+// </script>
